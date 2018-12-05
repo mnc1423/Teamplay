@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>모두의팀플</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href={% static "vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href={% static "css/modern-business.css" %} rel="stylesheet">
+
+      <style>
+      .jb-xx-small { font-size: xx-small; }
+      .jb-x-small { font-size: x-small; }
+      .jb-small { font-size: small; }
+      .jb-medium { font-size: medium; }
+      .jb-large { font-size: large; }
+      .jb-x-large { font-size: x-large; }
+      .jb-xx-large { font-size: xx-large; }
+    </style>
+
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">모두의팀플</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- 수정된 부분(모두의 팀플 이미지 배치) -->
+<br>
+<br>
+<center><h2 class="jb-xx-large" >모두의팀플</h2></center>
+<br>
+<!--
+<br>
+<body>
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 text-center">
+
+          <img class="img-fluid rounded" src="\\media\\main\\main.png" alt="">
+        </div>
+        <div class="col-lg-2"></div>
+       </div>
+<body>
+-->
+<!--"http://placehold.it/300x200" 이미지 크기 설정 ! n x m-->
+<!-- 수정된 부분 끝(모두의 팀플 이미지 배치) -->
+
+{% block content %}
+{% endblock %}
+
+<!-- /.container -->
+
+<!-- Footer -->
+<br>
+<br>
+<br>
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; Kimsunwoo, Chominjei, Leehojae, Junghyunju</p>
+  </div>
+  <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src={% static "vendor/jquery/jquery.min.js" %}></body>
+<script src={% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}></html>
+
+</body>
+</html>

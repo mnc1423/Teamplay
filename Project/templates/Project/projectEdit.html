@@ -1,0 +1,22 @@
+{% extends 'Project/projectBase.html' %}
+
+{% block content %}
+<div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Upload & Edit </h1>
+
+ <form
+    method="POST"
+    action=""
+    enctype="multipart/form-data"
+>
+    {% csrf_token %}
+    {{ form.as_p }}
+     <br>
+     <h10> upload files.</h10>
+     <br>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div>
+{% endblock %}

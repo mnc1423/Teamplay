@@ -1,0 +1,22 @@
+{% extends 'Project/projectBase.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Schedule</h1>
+ <br>
+
+    <!--폼을 아래와 같이 꺽새로 해놔야 저장됨 왜 ??? project_edit에서 저장이안되던 이유임 -->
+<form
+    method="POST"
+    action=""
+    enctype="multipart/form-data"
+>
+    {% csrf_token %}
+    {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div>
+{% endblock %}

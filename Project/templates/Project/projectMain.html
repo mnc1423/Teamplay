@@ -1,0 +1,83 @@
+{% extends 'Project/projectBase.html' %}
+
+{% block content %}
+
+
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <h1 class="col mt-4 mb-3">Project
+    </h1>
+
+    <!--
+    <div class="col mt-4 mb-4 input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+            <button type="submit", class="btn btn-secondary">Go!</button>
+          </span>
+    </div>
+    -->
+  </div>
+
+        <!--
+        <a href="{% url 'newFile' project_name=project_name%}"> <p> FileUpload </p> </a>
+        <a href="{% url 'branchAdminCertification' project_name=project_name%}"> <p> Set mainBranch </p> </a>
+        -->
+
+  <div class="row">
+    {% for post in posts %}
+
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+      <div class="card h-100">
+        <div class="thumbnail-wrapper">
+          <div class="thumbnail">
+
+            <h4 class="card-title">
+              <a href="{% url 'fileDetail' project_name=project_name file_title=post.file_title %}"> {{ post.file_title }} </a>
+            </h4>
+
+          </div>
+        </div>
+
+        <div class="card-body">
+          <p>{{post.origin_date}}에 게시</p>
+          <p>작성자 : {{post.user_name}}</p>
+          <p class="card-text">
+            {% if post.content|length > 65%}
+            {{ post.content|slice:"0:65"|add:"  ..."}}
+            {% else %}
+            {{ post.content }}
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+
+ {% if posts.has_other_pages %}
+  <!-- Pagination -->
+  <ul class="pagination justify-content-center">
+
+    {% if posts.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
+    {% else %}
+    <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+
+    {% for i in posts.paginator.page_range %}
+    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+    {% endfor %}
+
+    {% if posts.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ max_index }}">&raquo;</a></li>
+    {% else %}
+    <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+  {% endif %}
+
+</div>
+{% endblock %}

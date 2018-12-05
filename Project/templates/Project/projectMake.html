@@ -1,0 +1,27 @@
+{% extends 'Project/base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+      <div class="row mb-4">
+        <div class="col-lg-12 text-center">
+   <!-- 이하 부터 수정된 코드 -->
+         {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- 나중에 위치 변경 할 때 바꿔야함 -->
+            <button type="submit" class="btn btn-primary btn-lg">Make</button>
+          </form>
+   <!-- 수정 끝 -->
+        </div>
+      </div>
+</div>
+{% endblock %}
+
+
